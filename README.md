@@ -9,7 +9,7 @@
 
 Esta guía contempla ejercicios prácticos que abarcan todo el plan de estudio de la materia, y un poco más (Ver más adelante). Se recomienda trabajar dentro de una nueva carpeta con permisos de administrador y usar `sudo` cuando sea necesario.
 
-Esta guía práctica se divide en capítulos, existen diversos temas que se vuelven a ver ya que se integran con otros conceptos, como `Shell + Python` o `Shell + Docker`, por lo que se recomienda seguir el orden de los capítulos.
+La guía práctica se divide en capítulos, existen diversos temas que se vuelven a ver ya que se integran con otros conceptos, como `Shell + Python` o `Shell + Docker`, por lo que se recomienda seguir el orden de los capítulos.
 
 ## Requisitos
 
@@ -87,7 +87,8 @@ Esta guía práctica se divide en capítulos, existen diversos temas que se vuel
 
 ## Glosario
 
-Durante la guía se utilizarán términos específicos que se detallan a continuación para comprender mejor la clase de ejercicios a los que te enfrentarías:
+> [!NOTE]
+> Durante la guía se utilizarán términos específicos que se detallan a continuación para comprender mejor la clase de ejercicios a los que te enfrentarías:
 
 > [🎩] Sombrero de mago  -> Este ejercicio cuenta con un truco, no es dificil su comprensión, solo que a veces requiere verlo desde otra perspectiva. (¬‿¬)
 
@@ -143,7 +144,8 @@ Durante la guía se utilizarán términos específicos que se detallan a continu
 ## Introducción
 Esta guía proporciona ejercicios prácticos para mejorar el manejo de Bash, enfatizando la modificación de archivos y directorios. Se recomienda trabajar dentro de una carpeta de prueba para evitar la pérdida de datos importantes. Los ejercicios pueden ejecutarse en WSL, una máquina virtual, un entorno nativo de Linux o en AWS o en una Raspberry Pi Zero.
 
-En esta guía se presentarán muchas acciones que se pueden hacer con el mouse como borrar o cambiar nombre, pero se pide que se haga todo con Bash, porque esa es la idea.
+> [!IMPORTANT]
+> En esta guía se presentarán muchas acciones que se pueden hacer con el mouse como borrar o cambiar nombre, pero se pide que se haga todo con Bash, porque esa es la idea.
 
 ### Comandos cubiertos
 - `mkdir`, `sed`, `cat`, `cd`, `ls`, `rm`, `mv`, `cp`, `chgrp`, `chown`, `chmod`, `man`, `tree`
@@ -275,6 +277,193 @@ En esta guía se presentarán muchas acciones que se pueden hacer con el mouse c
 
 12. ```bash
     rm -r ../A ../B
+    ```
+
+---
+
+# **Guía 2: Regex - Introducción desde Bash**
+
+## Introducción
+Esta guía presenta ejercicios prácticos para aprender expresiones regulares (regex) en Bash. Se utilizará `grep`, `sed`, `sort` y `find`. Cada ejercicio trabaja con archivos `.txt, .csv, .log` para facilitar la manipulación de datos.
+
+## Ejercicios
+
+### Ejercicio 1:
+> Obtener el path completo del archivo `datos.csv` existente en el directorio Data, partiendo desde el directorio raíz de la ejercitación de Regex.
+
+### Ejercicio 2 💀:
+> Obtener el PID del proceso `bash` en ejecución. (Pueden haber varios dependiendo de si corres otros bash).
+
+### Ejercicio 3:
+> Encontrar todas las menciones de la palabra ERROR dentro del directorio Data/
+
+### Ejercicio 4 🎩: 
+> Mostrar solo los nombres de archivos donde están dichas apariciones.
+
+### Ejercicio 5: 
+> Encontrar la razón del error de simple_logs.log (pista: busca la linea de la palabra ERROR).
+
+### Ejercicio 6: 
+> Buscar la cantidad de errores de minecraft_latest.log (pista: busca [main/ERROR] para evitar confundirte con otras palabras `Error` en medio de la linea).
+
+### Ejercicio 7:
+> Quitar todas las tildes de libro.txt para que sea compatible en ANSI.
+
+### Ejercicio 8: 
+> Cambiar la palabra Mancha por Buenos Aires en libro.txt.
+
+### Ejercicio 9 🎩: 
+> Arreglar puente_de_la_muerte.txt para que cada vez que Arthur diga "five questions", Galahad diga "three questions" (`GALAHAD: Three questions.`), no olvides considerar los saltos de línea.
+
+### Ejercicio 10 💀: 
+> Validar que los emails de datos.csv tengan un formato correcto (nombre @ dominio . com)
+
+### Ejercicio 11: 
+> Devolver el nombre inválido (Tip: es `Nombre Apellido`, 2 palabras) del archivo datos.csv
+
+### Ejercicio 12 🎩: 
+> Devolver todos los urls completos de datos.csv sin `https://`
+
+### Ejercicio 13: 
+> Filtrar todas las contraseñas que son seguras de password.txt (mas de 10 caracteres, 1 mayúscula, 1 minúscula, 1 numero, 1 símbolo), en un archivo que se llame safe_passwords.txt
+
+### Ejercicio 14: 
+> Devolver todas las contraseñas que solo estén compuestas por caracteres de password.txt
+
+### Ejercicio 15: 
+> Devolver todas las contraseñas que no matcheen entre password.txt y password-backup.txt
+
+### Ejercicio 16 💀 🕵️‍♂️: 
+> Devolver las contraseñas mas largas de password.txt
+
+### Ejercicio 17: 
+> Agregarles un `Ab1.` al final de cada una de estas para que sean seguras y guardarlas en el archivo safe_passwords.txt
+
+### Ejercicio 18: 
+> Devolver todos los links que aparecen en kivy.log
+
+### Ejercicio 19: 
+> Imprimir solo las líneas donde se indican cada paso del log de kivy (`1)`,  `2)`,  `3)`) en kivy.log
+
+### Ejercicio 20: 
+> Encontrar la causa del error de Kivy en kivy.log
+
+### Ejercicio 21 💀: 
+> Encontrar la hora en la que el servidor de Minecraft se resolvió por un crash en minecraft_latest.log (pista: busca el último [Server thread/FATAL])
+
+### Ejercicio 22: 
+> Encontrar la causa del crash en minecraft_latest.log (Pista: Son 2 lineas después de la última aparición de [main/ERROR] y [net.minecraft.server.Main/FATAL] en la misma linea)
+
+### Ejercicio 23: 
+> Encontrar la causa del crash limpiando cualquier caracter extraño (§ (Alt 0167) + letra) en minecraft_latest.log
+
+### Ejercicio 24 💀: 
+> Obtener la receta de pan de receta_pan.txt para poder hacer 3 kg de pan. (Está porcionado en 1100g, no es necesario tener precisión decimal)
+
+### Ejercicio 25 💀: 
+> Obtener la misma receta_pan.txt en porcentajes (Tip: pasarla a 1kg es más fácil para calcular porcentajes, no es necesario tener precisión decimal)
+
+---
+
+## Soluciones sugeridas
+
+1. ```bash
+   find / -type f -name "Data/datos.csv" 2>/dev/null
+   ```
+
+2. ```bash
+   grep -E '^[0-9]+' /proc/[0-9]*/stat | grep bash | sed -E 's|/proc/([0-9]+)/.*|\1|'
+   ```
+
+3. ```bash
+   grep -r "ERROR" Data/
+   ```
+
+4. ```bash
+   grep -rl "ERROR" Data/
+   ```
+5. ```bash
+   grep "ERROR" Data/simple_logs.log
+   ```
+
+6. ```bash
+   grep -c "\[main/ERROR\]" Data/minecraft_latest.log
+   ```
+
+7. ```bash
+   sed -E 'y/áéíóúÁÉÍÓÚ/aeiouAEIOU/' Data/libro.txt
+   ```
+
+8. ```bash
+   sed 's/Mancha/Buenos Aires/g' Data/libro.txt
+   ```
+
+9. ```bash
+   sed '/ARTHUR:.*five questions/{N;s/ARTHUR:.*five questions\nGALAHAD:.*/GALAHAD: Three questions./}' Data/puente_de_la_muerte.txt
+   ```
+
+10. ```bash
+    grep -E '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' Data/datos.csv
+    ```
+
+11. ```bash
+    grep -E '^[^@]+$' Data/datos.csv | sed -E 's/^([^,]+),.*$/\1/'
+    ```
+
+12. ```bash
+    grep -oE 'https?://[^ ]+' Data/datos.csv | sed 's|https://||'
+    ```
+
+13. ```bash
+    grep -E '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{10,}$' Data/password.txt > Data/safe_passwords.txt
+    ```
+
+14. ```bash
+    grep -E '^[a-zA-Z]+$' Data/password.txt
+    ```
+
+15. ```bash
+    grep -Fxvf Data/password-backup.txt Data/password.txt
+    ```
+
+16. ```bash
+    grep -oE '\S+' Data/password.txt | sed 's/.*/echo "& $(echo -n "&" | wc -c)"/e' | sort -k2,2nr | cut -d" " -f1
+    ```
+
+17. ```bash
+    sed 's/$/Ab1./' Data/password.txt >> Data/safe_passwords.txt
+    ```
+
+18. ```bash
+    grep -oE 'https?://[^ ]+' Data/kivy.log
+    ```
+
+19. ```bash
+    grep -E '^[0-9]+\)' Data/kivy.log
+    ```
+
+20. ```bash
+    grep "ERROR" Data/kivy.log
+    ```
+
+21. ```bash
+    grep "\[Server thread/FATAL\]" Data/minecraft_latest.log | tail -n1 | grep -oE '[0-9]{2}:[0-9]{2}:[0-9]{2}'
+    ```
+
+22. ```bash
+    grep -A5 "\[Server thread/FATAL\]" Data/minecraft_latest.log
+    ```
+
+23. ```bash
+    grep -A5 "\[Server thread/FATAL\]" Data/minecraft_latest.log | sed 's/§.//g'
+    ```
+
+24. ```bash
+    sed -E 's/([0-9]+) (g|ml)/echo "$((\1 * 3000 / 1100)) \2"/e' Data/receta_pan.txt
+    ```
+
+25. ```bash
+    sed -E 's/([0-9]+) (g|ml)/echo "$((\1 * 1000 / 1100)) \2"/e' Data/receta_pan.txt
     ```
 
 ---
